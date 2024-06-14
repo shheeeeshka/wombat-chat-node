@@ -15,7 +15,7 @@ class MessageController {
         try {
             const { chatId } = req.params;
             const messages = await messageService.getMessages(chatId);
-            return messages;
+            return res.json(messages);
         } catch (err) {
             next(err);
         }

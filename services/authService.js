@@ -39,7 +39,7 @@ class AuthService {
         if (!isCorrectPassword) {
             throw ApiError.BadRequest("Incorrect password");
         }
-        const token = tokenService.generateToken(user._id);
+        const token = await tokenService.generateToken(user._id);
         return {
             user,
             token,
